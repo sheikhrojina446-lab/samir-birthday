@@ -16,7 +16,7 @@
 </div>
 
 <script>
-var unlock=new Date("Oct 21, 2026 00:00:00").getTime();
+var unlock=new Date("Oct 2, 2026 00:00:00").getTime();
 setInterval(function(){var diff=unlock-new Date().getTime();if(diff<=0){lock.style.display="none";main.style.display="block";return;}d.innerText=Math.floor(diff/86400000);h.innerText=Math.floor(diff%86400000/3600000);m.innerText=Math.floor(diff%3600000/60000);s.innerText=Math.floor(diff%60000/1000)},1000);
 let cur=0;function next(){let slides=document.querySelectorAll(".slide");slides[cur].classList.remove("active");cur=(cur+1)%5;slides[cur].classList.add("active")}
 </script>
