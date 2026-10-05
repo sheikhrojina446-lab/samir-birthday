@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>For You</title>
+<style>body{margin:0;background:#0e0a1a;color:white;font-family:sans-serif;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center}.box{width:88%;max-width:360px;background:rgba(255,255,255,.06);border:1px solid #3a2a5a;border-radius:22px;padding:30px 22px}.timer{display:flex;gap:8px;justify-content:center;margin-top:16px}.t{background:#1a1330;border-radius:10px;padding:10px;min-width:58px;border:1px solid #2f2250}.t b{display:block;font-size:20px}.t span{font-size:8px;opacity:.6}#main{display:none}.slide{display:none}.slide.active{display:block}button{margin-top:18px;background:white;color:black;border:0;padding:10px 20px;border-radius:20px;font-weight:700}</style>
+</head>
+<body>
+<div class="box" id="lock"><div style="font-size:36px">🔒</div><h2><i>Something is<br>special for you</i></h2><p style="font-size:10px;letter-spacing:2px;opacity:.6">HAPPY BIRTHDAY - 21/10/2026</p><p style="font-size:10px;opacity:.5">UNLOCKS ON 21 OCT 12:00 AM</p><div class="timer"><div class="t"><b id="d">00</b><span>DAYS</span></div><div class="t"><b id="h">00</b><span>HOURS</span></div><div class="t"><b id="m">00</b><span>MINS</span></div><div class="t"><b id="s">00</b><span>SECS</span></div></div></div>
+
+<div class="box" id="main">
+<div class="slide active"><div style="font-size:40px">🎂</div><h2>Happy Birthday Samir!</h2><p>21/10/2026 - Aaj ka din sirf tumhara hai ✨</p></div>
+<div class="slide"><div style="font-size:40px">💌</div><h2>A Little Note</h2><p>Jo chaha wo sab tujhe mile 💗</p></div>
+<div class="slide"><div style="font-size:40px">🌟</div><h2>You Are Special</h2><p>Tum jaise log kam milte hai!</p></div>
+<div class="slide"><div style="font-size:40px">🎁</div><h2>One More Surprise</h2><p>Har din smile karne ka reason mile 😊</p></div>
+<div class="slide"><div style="font-size:40px">🎉</div><h2>Enjoy Your Day!</h2><p>Made with ❤️ just for you</p></div>
+<button onclick="next()">Next →</button>
+</div>
+
+<script>
+var unlock=new Date("Oct 21, 2026 00:00:00").getTime();
+setInterval(function(){var diff=unlock-new Date().getTime();if(diff<=0){lock.style.display="none";main.style.display="block";return;}d.innerText=Math.floor(diff/86400000);h.innerText=Math.floor(diff%86400000/3600000);m.innerText=Math.floor(diff%3600000/60000);s.innerText=Math.floor(diff%60000/1000)},1000);
+let cur=0;function next(){let slides=document.querySelectorAll(".slide");slides[cur].classList.remove("active");cur=(cur+1)%5;slides[cur].classList.add("active")}
+</script>
+</body>
+</html>
